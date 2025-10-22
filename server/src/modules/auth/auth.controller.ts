@@ -14,12 +14,14 @@ import {
   import { RegisterDto } from './dto/register.dto';
   import { AuthService } from './auth.service';
   import { constructResponse } from '../../shared/utils/helpers';
+  import { ApiTags } from '@nestjs/swagger';
 
+  @ApiTags('Authentication')
   @Controller('auth')
   export class AuthController {
     constructor(private readonly authService: AuthService) { }
 
-    @Post('register')
+  @Post('register')
     register(
       @Body() registerDto: RegisterDto,
       @Res({ passthrough: true }) response: Response,
@@ -30,7 +32,7 @@ import {
       });
     }
 
-    @Post('login')
+  @Post('login')
     login(
       @Body() loginDto: LoginDto,
       @Res({ passthrough: true }) response: Response,

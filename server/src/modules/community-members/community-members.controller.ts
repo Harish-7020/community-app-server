@@ -9,7 +9,9 @@ import {
   } from '@nestjs/common';
   import { CommunityMembersService } from './community-members.service';
   import { AuthGuard } from 'src/shared/guards/auth.guard';
+  import { ApiTags } from '@nestjs/swagger';
   
+  @ApiTags('Community Members')
   @Controller('members')
   @UseGuards(AuthGuard)
   export class CommunityMembersController {

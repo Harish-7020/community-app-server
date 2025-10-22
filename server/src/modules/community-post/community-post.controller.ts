@@ -19,7 +19,9 @@ import { CommunityPostService } from './community-post.service';
 import { CreateCommunityPostDto } from './dto/create-community-post.dto';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommunityPostDto } from './dto/update-community-post.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Community Posts')
 @Controller('post')
 @UseGuards(AuthGuard)
 export class CommunityPostController {

@@ -4,7 +4,9 @@ import { AnalyticsService } from './analytics.service';
 import { AuthGuard } from 'src/shared/guards/auth.guard';
 import { AnalyticsQueryDto } from './dto/analytics-query.dto';
 import { constructResponse } from '../../shared/utils/helpers';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Analytics')
 @Controller('analytics')
 @UseGuards(AuthGuard)
 export class AnalyticsController {

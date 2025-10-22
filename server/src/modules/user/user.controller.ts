@@ -6,7 +6,9 @@ import { AuthGuard } from '../../shared/guards/auth.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { profilePictureMulterConfig } from 'src/shared/config/multer.config';
 import { constructResponse } from '../../shared/utils/helpers';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Users')
 @Controller('users')
 @UseGuards(AuthGuard)
 export class UserController {
